@@ -4,55 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог товаров</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <header>
-        <nav class="nav"> 
+    <div class="page-container">
+        <header class="header">
+            <h1>Товары</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
-    </header>
-    
-    <main>
-        <h1>Наш каталог товаров</h1>
-        
-        <div class="catalog">
-            <div class="product-card">
-                <img src="../images/asa.png" alt="кот" width="200"  class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">кот.</h3>
-                    <p class="product-description">Краткое описание товара и его характеристик: обычный кот, ничего выдающегося в нем нет, но он хорош сам собой!</p>
-                    <div class="product-price">-1 ₽</div>
-                    <button class="product-button">В корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="../images/phony.png" alt="еще кот" width="200" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">еще один кот</h3>
-                    <p class="product-description">Краткое описание товара и его характеристик: он просто знает себе цену!</p>
-                    <div class="product-price">9999999 ₽</div>
-                    <div class="product-button">
-                    <button class="product-button">В корзину</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="../images/sss.png" alt="...и еще один" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">...и еще один...</h3>
-                    <p class="product-description">Краткое описание товара и его характеристик: ОН ОГРОМЕН</p>
-                    <div class="product-price">15 ₽</div>
-                    <button class="product-button">В корзину</button>
-                </div>
-            </div>
-        </div>
-        <link rel="stylesheet" href="../style/styles.css">
 
-    </main>
+        <main class="content">
+            <section class="products-section">
+                <h1 class="section-title">Наш каталог товаров</h1>
+                
+                <div class="products-grid">
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="../images/asa.png" alt="кот" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">кот.</h3>
+                            <p class="product-description">Краткое описание товара и его характеристик: обычный кот, ничего выдающегося в нем нет, но он хорош сам собой!</p>
+                            <div class="product-price">-1 ₽</div>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="../images/phony.png" alt="еще кот" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">еще один кот</h3>
+                            <p class="product-description">Краткое описание товара и его характеристик: он просто знает себе цену!</p>
+                            <div class="product-price">9999999 ₽</div>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="../images/sss.png" alt="...и еще один" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">...и еще один...</h3>
+                            <p class="product-description">Краткое описание товара и его характеристик: ОН ОГРОМЕН</p>
+                            <div class="product-price">15 ₽</div>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Магазин котов</p>
+        </footer>
+    </div>
+</body>
+</html>

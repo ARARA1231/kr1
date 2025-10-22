@@ -4,65 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - Наш магазин</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <div class="page-container">
+        <header class="header">
+            <h1>Контакты</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
-    </header>
-    
-    <main>
-        <div class="contacts-container">
-            <h1>Наши контакты</h1>
-            <p class="contacts-subtitle">Свяжитесь с нами удобным для вас способом</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-details">
-                        <h3>Электронная почта</h3>
-                        <a href="mailto:pomogite@kotu.ru" class="email-link">pomogite@kotu.ru</a>
-                        <p>Ответим в течение 999 часов</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-details">
-                        <h3>Наш адрес</h3>
-                        <p class="address"> Луна, 3 Краторский проспект, 25 вмятина
-                        </p>
-                        <p>Время работы: пн-пт 0:00-00:01</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-details">
-                        <h3>Телефон</h3>
-                        <p class="phone">+7 (495) 123-45-67</p>
-                        <button class="product-button" onclick="callUs()">Позвоните мне. СЕЙЧАС ЖЕ.</button>
-                    </div>
-                </div>
-            </div>
-            <div class="additional-contacts">
-                <h2>Другие способы связи</h2>
-                <div class="social-links">
-                    <a href="#" class="social-link">WhatsApp</a>
-                    <a href="#" class="social-link">Telegram</a>
-                    <a href="#" class="social-link">VK</a>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <footer>
-        <p>Email: pomogite@kotu.ru | Телефон: 8 (800) 555-35-35</p>
-    </footer>
-</body>
-<link rel="stylesheet" href="../style/styles.css">
 
+        <main class="content">
+            <section class="contacts-container">
+                <h1 class="section-title">Наши контакты</h1>
+                <p class="contacts-subtitle">Свяжитесь с нами удобным для вас способом</p>
+                
+                <div class="contact-grid">
+                    <article class="contact-item">
+                        <div class="contact-details">
+                            <h3>Электронная почта</h3>
+                            <a href="mailto:pomogite@kotu.ru" class="email-link">pomogite@kotu.ru</a>
+                            <p>Ответим в течение 999 часов</p>
+                        </div>
+                    </article>
+                    <article class="contact-item">
+                        <div class="contact-details">
+                            <h3>Наш адрес</h3>
+                            <p class="address">Луна, 3 Краторский проспект, 25 вмятина</p>
+                            <p>Время работы: пн-пт 0:00-00:01</p>
+                        </div>
+                    </article>
+                    <article class="contact-item">
+                        <div class="contact-details">
+                            <h3>Телефон</h3>
+                            <p class="phone">+7 (495) 123-45-67</p>
+                            <button class="contact-button" onclick="callUs()">Позвоните мне. СЕЙЧАС ЖЕ.</button>
+                        </div>
+                    </article>
+                </div>
+                
+                <section class="additional-contacts">
+                    <h2>Другие способы связи</h2>
+                    <div class="social-links">
+                        <a href="#" class="social-link">WhatsApp</a>
+                        <a href="#" class="social-link">Telegram</a>
+                        <a href="#" class="social-link">VK</a>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Email: pomogite@kotu.ru | Телефон: 8 (800) 555-35-35</p>
+        </footer>
+    </div>
+</body>
 </html>
