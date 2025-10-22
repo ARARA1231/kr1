@@ -66,5 +66,68 @@
             <p>Email: pomogite@kotu.ru | Телефон: 8 (800) 555-35-35</p>
         </footer>
     </div>
+    <dialog id="feedbackDialog" class="dialog">
+    <div class="dialog-content">
+        <form class="feedback-form" method="dialog">
+            <h2>Форма обратной связи</h2>
+            
+            <div class="form-group">
+                <label for="name">Имя *</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Телефон *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Электронная почта *</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Категория обращения *</label>
+                <select id="category" name="category" required>
+                    <option value="">Выберите категорию</option>
+                    <option value="technical">Техническая поддержка</option>
+                    <option value="sales">Вопросы по покупке</option>
+                    <option value="cooperation">Сотрудничество</option>
+                    <option value="other">Другое</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Текст обращения *</label>
+                <textarea id="message" name="message" placeholder="Опишите вашу проблему или вопрос..." rows="4" required></textarea>
+            </div>
+            
+            <div class="form-buttons">
+                <button type="button" class="cancel-button" onclick="closeDialog()">Отмена</button>
+                <button type="submit" class="submit-button">Отправить</button>
+            </div>
+        </form>
+    </div>
+</dialog>
+
+<script>
+    function openDialog() {
+        const dialog = document.getElementById('feedbackDialog');
+        dialog.showModal();
+    }
+    
+    function closeDialog() {
+        const dialog = document.getElementById('feedbackDialog');
+        dialog.close();
+    }
+    document.getElementById('feedbackDialog').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeDialog();
+        }
+    });
+</script>
+<div class="contact-actions">
+    <button class="contact-button" onclick="openDialog()">Обратная связь</button>
+</div>
 </body>
 </html>
