@@ -430,3 +430,24 @@ main.content {
         padding: 20px;
     }
 }
+.footer img {
+    vertical-align: middle;
+    max-height: 20px;
+    margin: 0 5px;
+}
+section {
+    margin-bottom: 40px;
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+.about-me p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+    word-wrap: break-word;
+}
