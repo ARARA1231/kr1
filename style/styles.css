@@ -582,28 +582,66 @@ main { flex: 1; }
     z-index: 1000;
     text-decoration: none;
     font-weight: bold;
-
     font-size: 0.9rem;
     max-width: calc(100vw - 2rem);
     word-break: break-word;
-    @media (pointer: coarse){ 
-    a, button, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
-    } 
+    
+    /* Скрываем до фокуса для лучшей доступности */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
 
-.nav{ 
-    position: sticky; 
-    top: 0; 
-    /* Прибавки для вырезов/жестовых панелей — только где они есть */ 
-    padding-block-start: calc(.75rem + env(safe-area-inset-top)); 
-    padding-block-end: .75rem; 
-    padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-inset
-    left)); 
-    padding-inline-end:   calc(var(--space-md, 1rem) + env(safe-area-inset
-    right)); 
-    background: #2563eb; 
-    color: #fff; 
-    z-index: 100; 
-    isolation: isolate; /* свой контекст для теней/фильтров */ 
-    box-shadow: 0 1px 3px rgba(0,0,0,.1); 
-    } 
+.skip-link:focus 
+{
+    transform: translateY(0);
+}
+
+/* Правильный медиа-запрос для тач-устройств */
+@media (pointer: coarse) 
+{
+    .skip-link 
+    {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+    
+    a, button, .nav-link 
+    {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+}
+
+.nav 
+{
+    position: sticky;
+    top: 0;
+    padding-block-start: calc(.75rem + env(safe-area-inset-top));
+    padding-block-end: .75rem;
+    padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-inset-left));
+    padding-inline-end: calc(var(--space-md, 1rem) + env(safe-area-inset-right));
+    background: #2563eb;
+    color: #fff;
+    z-index: 100;
+    isolation: isolate;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    
+    /* Добавляем для мобильных */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) 
+{
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        display: block;
+        text-align: center;
+        width: 90%;
+    }
 }
