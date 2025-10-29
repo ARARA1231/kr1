@@ -451,7 +451,6 @@ article {
 h1, h2, h3 {
     word-wrap: break-word;
 }
-/* Стили для модального окна */
 .dialog {
     border: none;
     border-radius: 15px;
@@ -564,13 +563,47 @@ background: #ffffff;
 color: #0b1020; 
 } 
 .page { 
-min-height: 100vh;   /* фолбэк для старых браузеров (может не учитывать 
-панели на мобилках) */ 
-min-height: 100svh;  /* стабильный минимум: высота экрана с панелями 
-(всегда влезет) */ 
-min-height: 100dvh;  /* на новых браузерах — актуальная видимая высота, 
-обновляется при скролле */ 
+min-height: 100vh;
+min-height: 100svh; 
+min-height: 100dvh;  
 display: flex; 
 flex-direction: column; 
 } 
 main { flex: 1; }
+
+.skip-link {
+    background: #764BA2;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0.3rem;
+    left: 0.3rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+
+    font-size: 0.9rem;
+    max-width: calc(100vw - 2rem);
+    word-break: break-word;
+    @media (pointer: coarse){ 
+    a, button, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
+    } 
+
+.nav{ 
+    position: sticky; 
+    top: 0; 
+    /* Прибавки для вырезов/жестовых панелей — только где они есть */ 
+    padding-block-start: calc(.75rem + env(safe-area-inset-top)); 
+    padding-block-end: .75rem; 
+    padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-inset
+    left)); 
+    padding-inline-end:   calc(var(--space-md, 1rem) + env(safe-area-inset
+    right)); 
+    background: #2563eb; 
+    color: #fff; 
+    z-index: 100; 
+    isolation: isolate; /* свой контекст для теней/фильтров */ 
+    box-shadow: 0 1px 3px rgba(0,0,0,.1); 
+    } 
+}
