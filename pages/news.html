@@ -3,70 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости!</title>
+    <title>Контакты - Наш магазин котов | Свяжитесь с нами</title>
+    <meta name="description" content="Свяжитесь с нашим магазином котов. Телефон, email, адрес и форма обратной связи.">
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <a class="skip-link" href="../index.html">
-    <span>К основной информации</span>
-</a>
+    <a class="skip-link" href="#main-content">
+        <span>Перейти к основному содержимому</span>
+    </a>
+
     <div class="page-container">
-        <header class="header">
-            <h1>Новости</h1>
+        <header class="header" role="banner">
+            <h1>Контакты</h1>
         </header>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация" role="navigation">
             <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html" aria-label="Перейти на главную страницу">
+                        Главная
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html" aria-label="Перейти к новостям">
+                        Новости
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="practices.html" aria-label="Перейти к практикам">
+                        Практики
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="goods.html" aria-label="Перейти к товарам">
+                        Товары
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html" aria-current="page" aria-label="Текущая страница - контакты">
+                        Контакты
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <main class="content">
-            <section class="news-container">
-                <h2 class="section-title">Последние новости...</h2>
+        <main class="content" id="main-content" role="main">
+            <section class="contacts-container">
+                <h1 class="section-title">Наши контакты</h1>
+                <p class="contacts-subtitle">Свяжитесь с нами удобным для вас способом</p>
                 
-                <article class="news-card">
-                    <header class="news-header">
-                        <h3 class="news-title">Новость 1:</h3>
-                        <p class="news-meta">10.04.2006</p>
-                    </header>
-                    <div class="news-content">
-                        <p class="news-text">meow - кот</p>
-                        <a href="#" class="news-link">Читать далее...</a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <header class="news-header">
-                        <h3 class="news-title">prrrrrr - another kot</h3>
-                        <p class="news-meta">00.00.0000</p>
-                    </header>
-                    <div class="news-content">
-                        <p class="news-text">That what he said!</p>
-                        <a href="#" class="news-link">Читать менее...</a>
-                    </div>
-                </article>
+                <div class="contact-grid">
+                    <article class="contact-item" role="region" aria-labelledby="email-heading">
+                        <div class="contact-details">
+                            <h2 id="email-heading" class="contact-heading">Электронная почта</h2>
+                            <a href="mailto:pomogite@kotu.ru" class="email-link" aria-label="Написать письмо на адрес pomogite@kotu.ru">
+                                pomogite@kotu.ru
+                            </a>
+                            <p>Ответим в течение 24 часов</p>
+                        </div>
+                    </article>
+                    
+                    <article class="contact-item" role="region" aria-labelledby="address-heading">
+                        <div class="contact-details">
+                            <h2 id="address-heading" class="contact-heading">Наш адрес</h2>
+                            <p class="address">Луна, 3 Краторский проспект, 25 вмятина</p>
+                            <p>Время работы: пн-пт 0:00-00:01</p>
+                        </div>
+                    </article>
+                    
+                    <article class="contact-item" role="region" aria-labelledby="phone-heading">
+                        <div class="contact-details">
+                            <h2 id="phone-heading" class="contact-heading">Телефон</h2>
+                            <p class="phone" aria-label="Телефон: +7 (123) 123-45-67">+7 (123) 123-45-67</p>
+                            <button class="contact-button" onclick="callUs()" aria-label="Позвонить нам по номеру +7 (123) 123-45-67">
+                                Позвоните мне
+                            </button>
+                        </div>
+                    </article>
+                </div>
                 
-                <article class="news-card">
-                    <header class="news-header">
-                        <h3 class="news-title">Новые возможности</h3>
-                        <p class="news-meta">вставьте текст...</p>
-                    </header>
-                    <div class="news-content">
-                        <p class="news-text">новости закончиись, аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа</p>
-                        <a href="#" class="news-link">Читать далее...</a>
+                <div class="contact-actions">
+                    <button class="contact-button primary" onclick="openDialog()" aria-label="Открыть форму обратной связи">
+                        Обратная связь
+                    </button>
+                </div>
+                
+                <section class="additional-contacts" aria-labelledby="social-heading">
+                    <h2 id="social-heading">Другие способы связи</h2>
+                    <div class="social-links" role="list">
+                        <a href="#" class="social-link" role="listitem" aria-label="Связаться через WhatsApp">
+                            WhatsApp
+                        </a>
+                        <a href="#" class="social-link" role="listitem" aria-label="Связаться через Telegram">
+                            Telegram
+                        </a>
+                        <a href="#" class="social-link" role="listitem" aria-label="Связаться через ВКонтакте">
+                            VK
+                        </a>
                     </div>
-                </article>
+                </section>
             </section>
         </main>
 
-        <footer class="footer">
-            <p><img src="../images/mewing-mewing-cat.gif" alt="mewing cat" style="vertical-align: middle; max-height: 20px;"></p>
+        <footer class="footer" role="contentinfo">
+            <p>Email: <a href="mailto:pomogite@kotu.ru" class="footer-link">pomogite@kotu.ru</a> | Телефон: <a href="tel:+78005553535" class="footer-link">8 (800) 555-35-35</a></p>
         </footer>
     </div>
+
+    <dialog id="feedbackDialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <div class="dialog-content">
+            <form class="feedback-form" method="dialog" id="feedbackForm" novalidate aria-label="Форма обратной связи">
+                <h2 id="dialog-title">Форма обратной связи</h2>
+                <p id="dialog-description" class="dialog-description">Заполните форму для обратной связи. Все поля обязательны для заполнения.</p>
+                
+                <fieldset class="form-fieldset" aria-describedby="personal-info-hint">
+                    <legend class="form-legend">Персональная информация</legend>
+                    <p id="personal-info-hint" class="form-hint">Укажите ваши контактные данные</p>
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label required">
+                            Имя <span class="required-asterisk" aria-hidden="true">*</span>
+                        </label>
+                        <span id="name-hint" class="form-hint">Введите ваше полное имя</span>
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" 
+                               required aria-required="true" aria-invalid="false"
+                               aria-describedby="name-hint name-error">
+                        <span id="name-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label required">
+                            Телефон <span class="required-asterisk" aria-hidden="true">*</span>
+                        </label>
+                        <span id="phone-hint" class="form-hint">В формате +7 (XXX) XXX-XX-XX</span>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" 
+                               required aria-required="true" aria-invalid="false"
+                               pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                               aria-describedby="phone-hint phone-error">
+                        <span id="phone-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label required">
+                            Электронная почта <span class="required-asterisk" aria-hidden="true">*</span>
+                        </label>
+                        <span id="email-hint" class="form-hint">В формате example@mail.ru</span>
+                        <input type="email" id="email" name="email" placeholder="example@mail.ru" 
+                               required aria-required="true" aria-invalid="false"
+                               aria-describedby="email-hint email-error">
+                        <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Детали обращения</legend>
+                    
+                    <div class="form-group">
+                        <label for="category" class="form-label required">
+                            Категория обращения <span class="required-asterisk" aria-hidden="true">*</span>
+                        </label>
+                        <select id="category" name="category" required aria-required="true" aria-invalid="false"
+                                aria-describedby="category-hint category-error">
+                            <option value="">Выберите категорию</option>
+                            <option value="technical">Техническая поддержка</option>
+                            <option value="sales">Вопросы по товарам</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                        <span id="category-hint" class="form-hint">Выберите наиболее подходящую категорию</span>
+                        <span id="category-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label required">
+                            Текст обращения <span class="required-asterisk" aria-hidden="true">*</span>
+                        </label>
+                        <span id="message-hint" class="form-hint">Опишите вашу проблему или вопрос</span>
+                        <textarea id="message" name="message" placeholder="Опишите вашу проблему или вопрос..." 
+                                  rows="4" required aria-required="true" aria-invalid="false"
+                                  aria-describedby="message-hint message-error"></textarea>
+                        <span id="message-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+                </fieldset>
+                
+                <div class="form-buttons">
+                    <button type="button" class="cancel-button" onclick="closeDialog()" aria-label="Закрыть форму без сохранения">
+                        Отмена
+                    </button>
+                    <button type="submit" class="submit-button" aria-label="Отправить форму обратной связи">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        let previousActiveElement;
+        let modal = document.getElementById('feedbackDialog');
+        
+        function openDialog() {
+            previousActiveElement = document.activeElement;
+            modal.showModal();
+            
+            // Скрываем основной контент от скринридера
+            document.querySelectorAll('main, header, nav, footer').forEach(el => {
+                el.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Добавляем обработчик Escape
+            document.addEventListener('keydown', handleEscape);
+            
+            // Фокусируемся на первом поле формы
+            setTimeout(() => {
+                document.getElementById('name').focus();
+            }, 100);
+        }
+        
+        function closeDialog() {
+            modal.close();
+            
+            // Возвращаем видимость основному контенту
+            document.querySelectorAll('[aria-hidden="true"]').forEach(el => {
+                el.removeAttribute('aria-hidden');
+            });
+            
+            // Возвращаем фокус на предыдущий элемент
+            if (previousActiveElement) {
+                previousActiveElement.focus();
+            }
+            
+            // Убираем обработчик Escape
+            document.removeEventListener('keydown', handleEscape);
+            
+            // Сбрасываем форму
+            document.getElementById('feedbackForm').reset();
+            clearErrors();
+        }
+        
+        function handleEscape(event) {
+            if (event.key === 'Escape') {
+                closeDialog();
+            }
+        }
+        
+        function callUs() {
+            alert('Позвоните нам по номеру: +7 (123) 123-45-67\nМы ждем ваш звонок!');
+        }
+        
+        // Валидация формы
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.textContent = '';
+            });
+            document.querySelectorAll('[aria-invalid="true"]').forEach(field => {
+                field.setAttribute('aria-invalid', 'false');
+            });
+        }
+        
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + '-error');
+            field.setAttribute('aria-invalid', 'true');
+            errorElement.textContent = message;
+        }
+        
+        // Ловим фокус внутри модалки
+        modal.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                const focusableElements = modal.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (event.shiftKey && document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                } else if (!event.shiftKey && document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        });
+        
+        // Обработка отправки формы
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            clearErrors();
+            
+            let isValid = true;
+            
+            // Простая валидация
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                showError('name', 'Пожалуйста, введите ваше имя');
+                isValid = false;
+            }
+            
+            const phone = document.getElementById('phone').value.trim();
+            if (!phone) {
+                showError('phone', 'Пожалуйста, введите ваш телефон');
+                isValid = false;
+            }
+            
+            const email = document.getElementById('email').value.trim();
+            if (!email) {
+                showError('email', 'Пожалуйста, введите ваш email');
+                isValid = false;
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                showError('email', 'Пожалуйста, введите корректный email');
+                isValid = false;
+            }
+            
+            const category = document.getElementById('category').value;
+            if (!category) {
+                showError('category', 'Пожалуйста, выберите категорию');
+                isValid = false;
+            }
+            
+            const message = document.getElementById('message').value.trim();
+            if (!message) {
+                showError('message', 'Пожалуйста, введите текст обращения');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                closeDialog();
+            }
+        });
+        
+        // Закрытие по клику вне модалки
+        modal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeDialog();
+            }
+        });
+    </script>
 </body>
 </html>

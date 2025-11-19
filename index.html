@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Семестровая работа</title>
     <link rel="stylesheet" href="style/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport fit=cover"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport fit=cover">
 </head>
+
 <body>
     <a class="skip-link" href="index.html">
-    <span>К основной информации</span>
+        <span>К основной информации</span>
     </a>
     <div class="page-container">
         <header class="header">
@@ -26,17 +28,21 @@
             </ul>
         </nav>
 
+
         <main class="content">
             <article class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/takasimi-takasimirecipe.gif" alt="Фото автора">
+                <!-- Техника 4: Retina display поддержка -->
+                <img src="images/takasimi-takasimirecipe.gif" alt="Фото автора" class="profile-photo" width="220"
+                    height="280">
                 <h2 class="profile-name">Селезнев Сергей Сергеевич</h2>
                 <p class="profile-group">ЭФБО-14-24</p>
             </article>
 
             <section class="about-me">
                 <h2>Обо мне</h2>
-                <p>Обо мне: :3 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, растягиваем страницу...</p>
+                <p>Обо мне: :3 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+                    растягиваем страницу...</p>
             </section>
 
             <section class="skills-container">
@@ -63,13 +69,31 @@
                         <h3 class="experience-title">Опыт 3</h3>
                         <p class="experience-desc">Работал рэпером. Читал и пел, ого, я и сам этого не знал!</p>
                     </article>
+                    <section class="download-section">
+                        <h2>Мои работы</h2>
+                        <button class="download-btn" onclick="downloadPDF()">
+                            Скачать резюме
+                        </button>
+                    </section>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>окак <img src="images/окак-о-как.gif" alt="окак" style="vertical-align: middle; max-height: 20px;"> аж до конца дочитались</p>
+            <p>окак <img src="images/окак-о-как.gif" alt="окак" style="vertical-align: middle; max-height: 20px;"> аж до
+                конца дочитались</p>
         </footer>
     </div>
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.href = 'images/отчет.pdf';
+            link.download = 'отчет.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
+
 </html>
